@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
 	public int poolSize = 10;
+	public Color colorgreen;
+	public Color colorred;
 	[Header("Prefabs")]
 	public GameObject eventCardPrefab;
 	public GameObject timelineCardPrefab;
@@ -21,6 +23,15 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		StartMatch ();
 	}
+
+//	void Update(){
+//		if (Input.GetKeyDown (KeyCode.Space)) {
+//			Transform[] cards = pool.GetComponentsInChildren <Transform>();
+//			cards [1].SetParent (canvas);
+//			cards [1].SetParent(pool);
+//			print ("Set!");
+//		}
+//	}
 
 	public void StartMatch(){
 		Event[] events = Resources.LoadAll<Event> ("Events");

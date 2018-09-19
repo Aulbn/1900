@@ -11,6 +11,7 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	[SerializeField]
 	private GameObject timelineCardPrefab;
 	public bool isMouseOver = false;
+	public GameObject fillObject;
 
 	public Event tempEvent;
 
@@ -85,8 +86,6 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		RectTransform rect = GetComponent<RectTransform> ();
 		Vector3[] corners = new Vector3[4];
 		rect.GetWorldCorners (corners);
-
-//		print (corners [0] + "," + corners [1] + "," + corners [2] + "," + corners [3]);
 
 		if (pos.x > corners [0].x && pos.x < corners [2].x) {
 			if (pos.y < corners [1].y && pos.y > corners [3].y)
