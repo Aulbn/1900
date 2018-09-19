@@ -8,10 +8,11 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	public Transform content;
 	private List<Event> timeline = new List<Event>();
+//	private List<float> posList = new List<float>();
 	[SerializeField]
 	private GameObject timelineCardPrefab;
 	public bool isMouseOver = false;
-	public Transform fillObject;
+//	public Transform fillObject;
 
 	public Event tempEvent;
 
@@ -24,21 +25,7 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	void Update(){
-		if (isMouseOver) {
-			SetFillObject ();
-		} else {
-			if (fillObject.parent != GameManager.instance.canvas)
-				fillObject.SetParent (GameManager.instance.canvas);
-		}
-	}
 
-	private void SetFillObject(){ //VARFÖR DEN INTE FUNKA!?!?
-		Timeline[] cards = content.GetComponentsInChildren <Timeline> ();
-//		int index = 1;
-		print ("AH");
-		foreach (Timeline t in cards) {
-			print (t.name + ", " + t.transform.position.x);
-		}
 	}
 
 	public bool AddCard(Event historyEvent){

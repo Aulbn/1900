@@ -14,6 +14,7 @@ public class TimelineCard : MonoBehaviour {
 			eventNameText.text = historyEvent.eventName;
 			yearText.text = "" + historyEvent.year;
 		}
+
 	}
 
 	public Event GetEvent(){
