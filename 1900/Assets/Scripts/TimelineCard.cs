@@ -10,8 +10,10 @@ public class TimelineCard : MonoBehaviour {
 	public Text yearText;
 
 	void Start(){
-		eventNameText.text = historyEvent.eventName;
-		yearText.text = "" + historyEvent.year;
+		if (historyEvent != null) {
+			eventNameText.text = historyEvent.eventName;
+			yearText.text = "" + historyEvent.year;
+		}
 	}
 
 	public Event GetEvent(){
