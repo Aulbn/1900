@@ -35,7 +35,6 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		} else if (index >= 0) {
 			timeline.Insert (index, historyEvent);
 		} else {
-			print ("WRONG!");
 			return false;
 		}
 		ReloadTimeline ();
