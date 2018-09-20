@@ -1516,7 +1516,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 799905226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1652890292}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &799905226
@@ -1749,6 +1760,9 @@ MonoBehaviour:
   pool: {fileID: 1001790216}
   scoreFill: {fileID: 1285870328}
   currentPlayerText: {fileID: 1318268873}
+  correctWrongText: {fileID: 1553259315}
+  infoText: {fileID: 142921463}
+  feedbackPanel: {fileID: 1652890292}
 --- !u!4 &969303411
 Transform:
   m_ObjectHideFlags: 0
@@ -2925,12 +2939,12 @@ GameObject:
   - component: {fileID: 1652890295}
   - component: {fileID: 1652890294}
   m_Layer: 5
-  m_Name: CoverPanel
+  m_Name: FeedbackPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1652890293
 RectTransform:
   m_ObjectHideFlags: 0

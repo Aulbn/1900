@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
 	public Transform pool;
 	public Image scoreFill;
 	public Text currentPlayerText;
+	public Text correctWrongText;
+	public Text infoText;
+	public GameObject feedbackPanel;
 
 	private int player1Score, player2Score = 0;
 	private int currentPlayer;
@@ -63,6 +66,7 @@ public class GameManager : MonoBehaviour {
 		tCard.GetComponent<TimelineCard> ().SetEvent(events [poolSize]);
 
 		currentPlayer = 1;
+		feedbackPanel.SetActive (false);
 	}
 
 	public void EndRound(int score){
@@ -78,6 +82,19 @@ public class GameManager : MonoBehaviour {
 		print ("SCORE | Player1: " + player1Score + " | Player2: " + player2Score);
 		//Change texts + graphics
 		currentPlayerText.text = "Spelare " + currentPlayer + ":s tur!";
+	}
+
+	public void ShowFeedbackPanel(bool correct, Event historyEvent){
+		feedbackPanel.SetActive (true);
+		if (correct) {
+			correctWrongText.text = "Rätt!";
+			correctWrongText.color = colorgreen;
+			infoText.text = historyEvent.eventDescription;
+		} else {
+			correctWrongText.text = "Fel!";
+			correctWrongText.color = colorred;
+			infoText.text = "";
+		}
 	}
 
 }

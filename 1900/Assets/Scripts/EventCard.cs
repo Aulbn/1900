@@ -26,10 +26,10 @@ public class EventCard : MonoBehaviour, IDragHandler, IEndDragHandler{
 		if (Timeline.instance.InsideRect(Input.mousePosition)) {
 			if (Timeline.instance.AddCard (historyEvent)) {
 				Destroy (gameObject);
-				//Show CORRECT!
+				GameManager.instance.ShowFeedbackPanel (true, historyEvent);
 				GameManager.instance.EndRound(1);
 			} else {
-				//Show WRONG!
+				GameManager.instance.ShowFeedbackPanel (false, historyEvent);
 				GameManager.instance.EndRound(0);
 			}
 			//Next players turn
