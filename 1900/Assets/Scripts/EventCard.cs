@@ -32,7 +32,6 @@ public class EventCard : MonoBehaviour, IDragHandler, IEndDragHandler{
 				GameManager.instance.ShowFeedbackPanel (false, historyEvent);
 				GameManager.instance.EndRound(0);
 			}
-			//Next players turn
 		}
 		transform.parent = GameManager.instance.pool;
 	}

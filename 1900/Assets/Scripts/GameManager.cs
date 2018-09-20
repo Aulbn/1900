@@ -79,9 +79,13 @@ public class GameManager : MonoBehaviour {
 			currentPlayer = 1;
 			currentPlayerText.color = colorgreen;
 		}
-		print ("SCORE | Player1: " + player1Score + " | Player2: " + player2Score);
-		//Change texts + graphics
+//		print ("SCORE | Player1: " + player1Score + " | Player2: " + player2Score);
 		currentPlayerText.text = "Spelare " + currentPlayer + ":s tur!";
+
+		if (pool.GetComponentsInChildren <EventCard> ().Length == 0) {
+			print ("Game Over!");
+		}
+			
 	}
 
 	public void ShowFeedbackPanel(bool correct, Event historyEvent){

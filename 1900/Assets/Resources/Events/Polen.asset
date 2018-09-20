@@ -11,10 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5759f2c8972043903672e665647d7, type: 3}
   m_Name: Polen
   m_EditorClassIdentifier: 
-  eventName: Tyskland invaderade Polen
+  eventName: Invasionen av Polen
   year: 1939
-  eventDescription: "Invasionen av Polen var en gemensam invasion av Nazisttyskland
-    och Sovjetunionen. Den 23e Augusti undertecknade Tyskland och Sovjet en icke-aggressionspakt,
-    och enades sedan om en f\xF6rdelning av Polen. Den 1 September 1939 inledde tyskland
+  eventDescription: "Den 23e augusti undertecknade Tyskland och Sovjet en icke-aggressionspakt,
+    och enades sedan om en f\xF6rdelning av Polen. Den 1 September 1939 inledde Tyskland
     sin invasion av Polen, och den 17e september f\xF6ljde Sovjet. Invasionen markerade
     b\xF6rjan av Andra V\xE4rldskriget."
