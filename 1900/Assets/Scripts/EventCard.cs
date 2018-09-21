@@ -23,7 +23,7 @@ public class EventCard : MonoBehaviour, IDragHandler, IEndDragHandler{
 	}
 
 	public void OnEndDrag (PointerEventData eventData){
-		if (Timeline.instance.InsideRect(Input.mousePosition)) {
+		if (Timeline.instance.isMouseOver) {
 			if (Timeline.instance.AddCard (historyEvent)) {
 				Destroy (gameObject);
 				GameManager.instance.ShowFeedbackPanel (true, historyEvent);

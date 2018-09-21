@@ -14,7 +14,9 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public bool isMouseOver = false;
 //	public Transform fillObject;
 
-	public Event tempEvent;
+	private TimelineCard[] timelineCards;
+
+	public Transform marker;
 
 	void Awake(){
 		instance = this;
@@ -25,7 +27,30 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	void Update(){
+		isMouseOver = InsideRect (Input.mousePosition);
+		if (isMouseOver) {
+			timelineCards = content.GetComponentsInChildren <TimelineCard>();
+			UpdateMarker ();
+		}
+	}
 
+	private void UpdateMarker(){
+//		if (isMouseOver) {}
+		for (int i = 0; i < timelineCards.Length; i++){
+			Transform tempCard = timelineCards [i].transform;
+			if (Input.mousePosition.x < timelineCards [i].transform.position.x) {
+				if (i > 0) {
+					float pos = timelineCards [i - 1].transform.position.x + (tempCard.position.x - timelineCards [i - 1].transform.position.x) / 2 ;
+					marker.position = new Vector3 (pos, content.position.y);
+				} else {
+					//Längst åt höger
+					marker.position = new Vector3 (tempCard.position.x - tempCard.GetComponent<RectTransform> ().rect.width/2, content.position.y);
+				}
+				return;
+			}
+		}
+		//Längst åt höger
+		marker.position = new Vector3 (timelineCards [timelineCards.Length-1].transform.position.x + timelineCards [timelineCards.Length-1].GetComponent<RectTransform>().rect.width/2, content.position.y);
 	}
 
 	public bool AddCard(Event historyEvent){
@@ -64,7 +89,7 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	private int CorrectPlace(Event historyEvent){
-		TimelineCard[] timelineCards = content.GetComponentsInChildren <TimelineCard>();
+//		TimelineCard[] timelineCards = content.GetComponentsInChildren <TimelineCard>();
 		for (int i = 0; i < timelineCards.Length; i++) {
 			Vector2 tcPos = timelineCards [i].transform.position;
 			if (Input.mousePosition.x < tcPos.x) {
@@ -100,11 +125,11 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	public void OnPointerEnter(PointerEventData pointerEventData){
-		isMouseOver = true;
+//		isMouseOver = true;
 	}
 
 	public void OnPointerExit(PointerEventData pointerEventData){
-		isMouseOver = false;
+//		isMouseOver = false;
 	}
 
 }
