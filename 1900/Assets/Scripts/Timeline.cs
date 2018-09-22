@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler  {
 	public static Timeline instance;
@@ -13,44 +14,51 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	private GameObject timelineCardPrefab;
 	public bool isMouseOver = false;
 //	public Transform fillObject;
+	private float cardSpacing;
 
 	private TimelineCard[] timelineCards;
 
 	public Transform marker;
+//	public float temp;
 
 	void Awake(){
 		instance = this;
 	}
 
 	void Start(){
-
+		cardSpacing = content.GetComponent<HorizontalLayoutGroup> ().spacing;
 	}
 
 	void Update(){
 		isMouseOver = InsideRect (Input.mousePosition);
-		if (isMouseOver) {
-			timelineCards = content.GetComponentsInChildren <TimelineCard>();
+		if (isMouseOver && Input.GetButton ("Fire1")) {
+			timelineCards = content.GetComponentsInChildren <TimelineCard> ();
+			marker.gameObject.SetActive (true);
 			UpdateMarker ();
+		} else {
+			marker.gameObject.SetActive (false);
 		}
+
+//		if (Input.GetButtonDown ("Jump")) {
+//			temp += 5;
+//		}
 	}
 
 	private void UpdateMarker(){
 //		if (isMouseOver) {}
+		Vector3[] corners = new Vector3[4];
+		timelineCards[0].GetComponent<RectTransform> ().GetWorldCorners (corners);
+		float cardWidth = corners [3].x - corners [0].x;
+
 		for (int i = 0; i < timelineCards.Length; i++){
 			Transform tempCard = timelineCards [i].transform;
-			if (Input.mousePosition.x < timelineCards [i].transform.position.x) {
-				if (i > 0) {
-					float pos = timelineCards [i - 1].transform.position.x + (tempCard.position.x - timelineCards [i - 1].transform.position.x) / 2 ;
-					marker.position = new Vector3 (pos, content.position.y);
-				} else {
-					//Längst åt höger
-					marker.position = new Vector3 (tempCard.position.x - tempCard.GetComponent<RectTransform> ().rect.width/2, content.position.y);
-				}
+			if (Input.mousePosition.x < tempCard.position.x) {
+				marker.position = new Vector3 (tempCard.position.x - (cardWidth / 2 + cardSpacing / 2), content.position.y);
 				return;
 			}
 		}
 		//Längst åt höger
-		marker.position = new Vector3 (timelineCards [timelineCards.Length-1].transform.position.x + timelineCards [timelineCards.Length-1].GetComponent<RectTransform>().rect.width/2, content.position.y);
+		marker.position = new Vector3 (timelineCards [timelineCards.Length-1].transform.position.x + cardWidth / 2 + cardSpacing / 2, content.position.y);
 	}
 
 	public bool AddCard(Event historyEvent){
