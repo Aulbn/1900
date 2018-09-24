@@ -24,31 +24,37 @@ public class EventCard : MonoBehaviour {
 			SetPixelScale ();
 			transform.parent = GameManager.instance.canvas;
 			transform.position = new Vector3(Input.mousePosition.x + pixelScale.x/2, Input.mousePosition.y - pixelScale.y/2);
-		}
-		if (isHeld && Input.GetButtonDown("Fire1")) {
-			if (Timeline.instance.isMouseOver) {
+
+			if (Input.GetButtonDown ("Fire1") && Timeline.instance.isMouseOver) {
 				if (Timeline.instance.AddCard (historyEvent)) {
 					Destroy (gameObject);
 					GameManager.instance.ShowFeedbackPanel (true, historyEvent);
-					GameManager.instance.EndRound(1);
+					GameManager.instance.EndRound (1);
 				} else {
 					GameManager.instance.ShowFeedbackPanel (false, historyEvent);
-					GameManager.instance.EndRound(0);
+					GameManager.instance.EndRound (0);
 				}
+				ReleaseCard();
 			}
+		}
+	}
+
+	private void ReleaseCard(){
+		if (isHeld) {
+			isHeld = false;
+			GameManager.instance.infoPanel.gameObject.SetActive(false);
+			GameManager.instance.holdingCard = false;
+			GameManager.instance.infoPanel.SetInfo ("", "");
 			transform.parent = GameManager.instance.pool;
-			PickupCard (false);
 		}
 	}
 		
-	public void PickupCard(bool pickUp){
-		GameManager.instance.infoPanel.gameObject.SetActive(pickUp);
-		GameManager.instance.holdingCard = pickUp;
-		isHeld = pickUp;
-		if (pickUp) {
+	public void PickupCard(){
+		if (!isHeld) {
+			isHeld = true;
+			GameManager.instance.infoPanel.gameObject.SetActive(true);
+			GameManager.instance.holdingCard = true;
 			GameManager.instance.infoPanel.SetInfo (historyEvent.eventName, historyEvent.eventDescription);
-		} else {
-			GameManager.instance.infoPanel.SetInfo ("", "");
 		}
 	}
 

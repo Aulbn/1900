@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler  {
+public class Timeline : MonoBehaviour {
 	public static Timeline instance;
 
 	public Transform content;
@@ -89,7 +89,6 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	private int CorrectPlace(Event historyEvent){
-//		TimelineCard[] timelineCards = content.GetComponentsInChildren <TimelineCard>();
 		for (int i = 0; i < timelineCards.Length; i++) {
 			Vector2 tcPos = timelineCards [i].transform.position;
 			if (Input.mousePosition.x < tcPos.x) {
@@ -123,13 +122,4 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 		return false;
 	}
-
-	public void OnPointerEnter(PointerEventData pointerEventData){
-//		isMouseOver = true;
-	}
-
-	public void OnPointerExit(PointerEventData pointerEventData){
-//		isMouseOver = false;
-	}
-
 }
