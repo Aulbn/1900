@@ -9,17 +9,14 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	public Transform content;
 	private List<Event> timeline = new List<Event>();
-//	private List<float> posList = new List<float>();
 	[SerializeField]
 	private GameObject timelineCardPrefab;
 	public bool isMouseOver = false;
-//	public Transform fillObject;
 	private float cardSpacing;
 
 	private TimelineCard[] timelineCards;
 
 	public Transform marker;
-//	public float temp;
 
 	void Awake(){
 		instance = this;
@@ -31,21 +28,16 @@ public class Timeline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	void Update(){
 		isMouseOver = InsideRect (Input.mousePosition);
-		if (isMouseOver && Input.GetButton ("Fire1")) {
+		if (isMouseOver && GameManager.instance.holdingCard) {
 			timelineCards = content.GetComponentsInChildren <TimelineCard> ();
 			marker.gameObject.SetActive (true);
 			UpdateMarker ();
 		} else {
 			marker.gameObject.SetActive (false);
 		}
-
-//		if (Input.GetButtonDown ("Jump")) {
-//			temp += 5;
-//		}
 	}
 
 	private void UpdateMarker(){
-//		if (isMouseOver) {}
 		Vector3[] corners = new Vector3[4];
 		timelineCards[0].GetComponent<RectTransform> ().GetWorldCorners (corners);
 		float cardWidth = corners [3].x - corners [0].x;

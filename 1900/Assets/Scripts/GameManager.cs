@@ -21,16 +21,19 @@ public class GameManager : MonoBehaviour {
 	public Text correctWrongText;
 	public Text infoText;
 	public GameObject feedbackPanel;
+	public InfoPanel infoPanel;
 
 	private int player1Score, player2Score = 0;
 	private int currentPlayer;
 
+	public bool holdingCard = false;
 
 	void Awake(){
 		instance = this;
 	}
 
 	void Start () {
+		holdingCard = false;
 		StartMatch ();
 	}
 

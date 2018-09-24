@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class EventCard : MonoBehaviour, IDragHandler, IEndDragHandler{
+public class EventCard : MonoBehaviour {
 	[SerializeField]
 	private Event historyEvent;
 	public Text eventNameText;
 
 	private RectTransform rect;
 	private Vector2 pixelScale;
+	private bool isHeld;
 
 	void Start(){
 		if(historyEvent != null)
@@ -18,24 +19,37 @@ public class EventCard : MonoBehaviour, IDragHandler, IEndDragHandler{
 		rect = transform as RectTransform;			
 	}
 
-	public void OnDrag(PointerEventData eventData){
-		SetPixelScale ();
-		transform.parent = GameManager.instance.canvas;
-		transform.position = new Vector3(Input.mousePosition.x + pixelScale.x/2, Input.mousePosition.y - pixelScale.y/2);
-	}
-
-	public void OnEndDrag (PointerEventData eventData){
-		if (Timeline.instance.isMouseOver) {
-			if (Timeline.instance.AddCard (historyEvent)) {
-				Destroy (gameObject);
-				GameManager.instance.ShowFeedbackPanel (true, historyEvent);
-				GameManager.instance.EndRound(1);
-			} else {
-				GameManager.instance.ShowFeedbackPanel (false, historyEvent);
-				GameManager.instance.EndRound(0);
-			}
+	void Update(){
+		if (isHeld) {
+			SetPixelScale ();
+			transform.parent = GameManager.instance.canvas;
+			transform.position = new Vector3(Input.mousePosition.x + pixelScale.x/2, Input.mousePosition.y - pixelScale.y/2);
 		}
-		transform.parent = GameManager.instance.pool;
+		if (isHeld && Input.GetButtonDown("Fire1")) {
+			if (Timeline.instance.isMouseOver) {
+				if (Timeline.instance.AddCard (historyEvent)) {
+					Destroy (gameObject);
+					GameManager.instance.ShowFeedbackPanel (true, historyEvent);
+					GameManager.instance.EndRound(1);
+				} else {
+					GameManager.instance.ShowFeedbackPanel (false, historyEvent);
+					GameManager.instance.EndRound(0);
+				}
+			}
+			transform.parent = GameManager.instance.pool;
+			PickupCard (false);
+		}
+	}
+		
+	public void PickupCard(bool pickUp){
+		GameManager.instance.infoPanel.gameObject.SetActive(pickUp);
+		GameManager.instance.holdingCard = pickUp;
+		isHeld = pickUp;
+		if (pickUp) {
+			GameManager.instance.infoPanel.SetInfo (historyEvent.eventName, historyEvent.eventDescription);
+		} else {
+			GameManager.instance.infoPanel.SetInfo ("", "");
+		}
 	}
 
 	private void SetPixelScale(){
