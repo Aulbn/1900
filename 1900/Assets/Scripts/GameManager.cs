@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour {
 //		print ("SCORE | Player1: " + player1Score + " | Player2: " + player2Score);
 		currentPlayerText.text = "Spelare " + currentPlayer + ":s tur!";
 
-		if (pool.GetComponentsInChildren <EventCard> ().Length == 0) {
+		if (score > 0 && pool.GetComponentsInChildren <EventCard> ().Length == 0) {
 			print ("Game Over!");
 		}
 			
