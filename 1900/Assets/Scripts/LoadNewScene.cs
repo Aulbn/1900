@@ -11,4 +11,8 @@ public class LoadNewScene : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+	public void LoadMainMenu(){
+		SceneManager.LoadScene ("StartScene");
+	}
 }

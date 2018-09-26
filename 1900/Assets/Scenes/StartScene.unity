@@ -151,7 +151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -68.19995, y: -44.80005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10263734
@@ -393,7 +393,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Den spelare som har placerat flest kort p\xE5 r\xE4tt plats n\xE4r korten
-    tag slut vinner matchen. Lycka till, och ha det s\xE5 kul!"
+    tagit slut vinner matchen. Lycka till, och ha det s\xE5 kul!"
 --- !u!222 &83995030
 CanvasRenderer:
   m_ObjectHideFlags: 0

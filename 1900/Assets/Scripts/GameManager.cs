@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public int poolSize = 10;
 	public Color colorgreen;
 	public Color colorred;
+	public Color colorPlayer1;
+	public Color colorPlayer2;
 	[Header("Prefabs")]
 	public GameObject eventCardPrefab;
 	public GameObject timelineCardPrefab;
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	public Text infoText;
 	public GameObject feedbackPanel;
 	public InfoPanel infoPanel;
+	public GameOverPanel gameOverPanel;
 
 	private int player1Score, player2Score = 0;
 	private int currentPlayer;
@@ -70,23 +73,26 @@ public class GameManager : MonoBehaviour {
 
 		currentPlayer = 1;
 		feedbackPanel.SetActive (false);
+		currentPlayerText.color = colorPlayer1;
 	}
 
 	public void EndRound(int score){
 		if (currentPlayer == 1) {
 			player1Score += score;
 			currentPlayer = 2;
-			currentPlayerText.color = colorred;
+			currentPlayerText.color = colorPlayer2;
 		} else {
 			player2Score += score;
 			currentPlayer = 1;
-			currentPlayerText.color = colorgreen;
+			currentPlayerText.color = colorPlayer1;
 		}
 //		print ("SCORE | Player1: " + player1Score + " | Player2: " + player2Score);
 		currentPlayerText.text = "Spelare " + currentPlayer + ":s tur!";
 
 		if (score > 0 && pool.GetComponentsInChildren <EventCard> ().Length == 0) {
 			print ("Game Over!");
+			gameOverPanel.SetWinner (player1Score, player2Score);
+			gameOverPanel.gameObject.SetActive (true);
 		}
 			
 	}
