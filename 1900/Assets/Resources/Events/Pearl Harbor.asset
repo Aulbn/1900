@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5759f2c8972043903672e665647d7, type: 3}
+  m_Name: Pearl Harbor
+  m_EditorClassIdentifier: 
+  eventName: Attacken mot Pearl Harbor
+  year: 1941
+  eventDescription: "Attacken mot Pearl Harbor var ett \xF6verraskningsanfall som
+    utf\xF6rdes av den kejserliga japanska flottan mot den amerikanska marinbasen
+    vid Pearl Harbor, Hawaii.\r\nN\xE4sta dag f\xF6rklarade USA krig mot Japan vilket
+    resulterade i landets intr\xE4de i andra v\xE4rldskriget.\r"

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5759f2c8972043903672e665647d7, type: 3}
+  m_Name: Hiroshima och Nagasaki
+  m_EditorClassIdentifier: 
+  eventName: "Atombomberna \xF6ver Hiroshima och Nagasaki"
+  year: 1945
+  eventDescription: "Atombomberna \xF6ver Hiroshima och Nagasaki f\xE4lldes av USA.
+    De var de f\xF6rsta, och hittills de enda k\xE4rnvapen, som anv\xE4nts i krig.\r
+    Sex dagar efter bombningen av Nagasaki meddelade Japan sin kapitulation och avslutade
+    d\xE4rmed andra v\xE4rldskriget.\r"

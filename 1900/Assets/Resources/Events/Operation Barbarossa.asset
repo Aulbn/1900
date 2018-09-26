@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cc5759f2c8972043903672e665647d7, type: 3}
-  m_Name: LeninDog
+  m_Name: Operation Barbarossa
   m_EditorClassIdentifier: 
-  eventName: Lenin dog
-  year: 1924
-  eventDescription: Lenin dog 21 januari 1924 i Gorki Leninskije, Ryssland.
+  eventName: Inledning av Operation Barbarossa
+  year: 1941
+  eventDescription: "Operation Barbarossa var kodnamnet f\xF6r Nazitysklands invasion
+    av Sovjetunionen under andra v\xE4rldskriget.\r"

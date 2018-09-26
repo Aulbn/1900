@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5759f2c8972043903672e665647d7, type: 3}
+  m_Name: Kristallnatten
+  m_EditorClassIdentifier: 
+  eventName: Kristallnatten
+  year: 1938
+  eventDescription: "Kristallnatten var kulmen p\xE5 de v\xE5ldsamma pogromer mot
+    judar som genomf\xF6rdes i Tyskland innan andra v\xE4rldskriget. \rOmkring 400
+    judar d\xF6dades eller tvingades beg\xE5 sj\xE4lvmord, 20.000-30.000 arresterades
+    och f\xF6rdes till koncentrationsl\xE4ger, 267 synagogor br\xE4ndes ned och \xF6ver
+    7500 butiker vandaliserades.\r\n"
