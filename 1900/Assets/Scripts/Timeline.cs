@@ -92,9 +92,9 @@ public class Timeline : MonoBehaviour {
 		for (int i = 0; i < timelineCards.Length; i++) {
 			Vector2 tcPos = timelineCards [i].transform.position;
 			if (Input.mousePosition.x < tcPos.x) {
-				if (historyEvent.year <= timelineCards [i].GetEvent().year) {
+				if (System.DateTime.Compare(historyEvent.GetDate(), timelineCards [i].GetEvent().GetDate()) < 0) {
 					if (i > 0) {
-						if (historyEvent.year >= timelineCards [i - 1].GetEvent().year) {
+						if (System.DateTime.Compare(historyEvent.GetDate(), timelineCards [i - 1].GetEvent().GetDate()) > 0) {
 							return i;
 						}
 					} else
@@ -104,7 +104,7 @@ public class Timeline : MonoBehaviour {
 			}
 		}
 		//Never to the left
-		if (historyEvent.year > timelineCards[timelineCards.Length-1].GetEvent().year){
+		if (System.DateTime.Compare(historyEvent.GetDate(), timelineCards[timelineCards.Length-1].GetEvent().GetDate()) > 0){
 			return timelineCards.Length;
 		}
 		return -1;

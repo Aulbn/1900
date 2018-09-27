@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Molotov-Ribbentrop-Pakten
   year: 1939
+  month: 8
+  day: 23
   eventDescription: "Molotov-Ribbentrop-pakten var en icke-angreppspakt mellan Sovjetunionen
     och Tyskland. Pakten innebar ett icke-aggressionsavtal mellan staterna, men inbegrep
     \xE4ven i hemlighet en uppdelning av \xD6steuropa.\r Pakten gav ett slags klartecken

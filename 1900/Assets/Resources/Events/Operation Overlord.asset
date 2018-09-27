@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Operation Overlord
   year: 1944
+  month: 6
+  day: 6
   eventDescription: "Operation Overlord var kodnamnet f\xF6r Slaget om Normandie,
     den Allierade operationen som inledde invasionen av Tysk-ockuperade V\xE4steuropa
     under andra v\xE4rldskriget av allierade styrkor. Operationen p\xE5b\xF6rjades

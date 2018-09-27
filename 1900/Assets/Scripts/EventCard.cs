@@ -21,6 +21,7 @@ public class EventCard : MonoBehaviour {
 
 	void Update(){
 		if (isHeld) {
+//			print (historyEvent.GetDate ().ToString("dd/MM/yyyy"));
 			SetPixelScale ();
 			transform.parent = GameManager.instance.canvas;
 			transform.position = new Vector3(Input.mousePosition.x + pixelScale.x/2, Input.mousePosition.y - pixelScale.y/2);

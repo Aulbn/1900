@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Inledning av Slaget vid Stalingrad
   year: 1942
+  month: 8
+  day: 21
   eventDescription: "Slaget vid Stalingrad utk\xE4mpades under andra v\xE4rldskriget
     mellan Tyskland och Sovjetunionen vid staden Staliningrad (idag Volgograd) och
     \xE4r ett av v\xE4rldshistoriens blodigaste slag med sammanlagda f\xF6rluster

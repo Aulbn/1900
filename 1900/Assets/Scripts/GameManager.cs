@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour {
 		if (correct) {
 			correctWrongText.text = "Rätt!";
 			correctWrongText.color = colorgreen;
-			infoText.text = historyEvent.eventDescription;
+			infoText.text = historyEvent.eventName + "\n" + historyEvent.GetDate().ToString("dd/MM/yyy");
 		} else {
 			correctWrongText.text = "Fel!";
 			correctWrongText.color = colorred;

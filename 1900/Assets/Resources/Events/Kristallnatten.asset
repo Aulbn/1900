@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Kristallnatten
   year: 1938
+  month: 11
+  day: 9
   eventDescription: "Kristallnatten var kulmen p\xE5 de v\xE5ldsamma pogromer mot
     judar som genomf\xF6rdes i Tyskland innan andra v\xE4rldskriget. \rOmkring 400
     judar d\xF6dades eller tvingades beg\xE5 sj\xE4lvmord, 20.000-30.000 arresterades

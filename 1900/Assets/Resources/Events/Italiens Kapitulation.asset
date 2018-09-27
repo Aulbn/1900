@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Italiens Kapitulation
   year: 1943
+  month: 9
+  day: 8
   eventDescription: "Efter att de tysk-italienska styrkorna i Nordafrika besegrats
     utav dem brittiska och amerikanska styrkorna var st\xF6det f\xF6r Mussolini och
     kriget svagt bland det italienska etablissemanget.\r Mussolini greps och avsattes

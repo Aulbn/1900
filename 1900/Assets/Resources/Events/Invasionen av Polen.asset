@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Invasionen av Polen
   year: 1939
+  month: 9
+  day: 1
   eventDescription: "Den gemensamma invasionen mellan Tyskland och Sovjet inleddes
     uav Tyskarna. En halv m\xE5nad efter Tysklands invasion fr\xE5n v\xE4st inledde
     Sovjetunionen sin invasion fr\xE5n \xF6st. \r\nPolen annexerades och delades upp

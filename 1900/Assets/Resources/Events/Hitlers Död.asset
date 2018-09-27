@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: "Hitlers D\xF6d"
   year: 1945
+  month: 4
+  day: 30
   eventDescription: "Med Berlin omringad av sovjeterna, och sin flyktv\xE4g kapad
     av amerikanerna ins\xE5g Hitler att kriget var f\xF6rlorat. F\xF6r att undvika
     att dela Mussolinis \xF6de begick Hitler sj\xE4lvmord tillsammans med Eva Braun,

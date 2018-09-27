@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: "Atombomberna \xF6ver Hiroshima och Nagasaki"
   year: 1945
+  month: 8
+  day: 6
   eventDescription: "Atombomberna \xF6ver Hiroshima och Nagasaki f\xE4lldes av USA.
     De var de f\xF6rsta, och hittills de enda k\xE4rnvapen, som anv\xE4nts i krig.\r
     Sex dagar efter bombningen av Nagasaki meddelade Japan sin kapitulation och avslutade

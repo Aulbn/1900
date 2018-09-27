@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Attacken mot Pearl Harbor
   year: 1941
+  month: 12
+  day: 7
   eventDescription: "Attacken mot Pearl Harbor var ett \xF6verraskningsanfall som
     utf\xF6rdes av den kejserliga japanska flottan mot den amerikanska marinbasen
     vid Pearl Harbor, Hawaii.\r\nN\xE4sta dag f\xF6rklarade USA krig mot Japan vilket

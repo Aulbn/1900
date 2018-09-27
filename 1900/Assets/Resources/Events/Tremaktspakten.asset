@@ -13,5 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Undertecknandet av Tremaktspakten
   year: 1940
+  month: 9
+  day: 27
   eventDescription: "Tremaktspakten var en pakt mellan Japan, Italien och Tyskland
     d\xE4r de lovade att bist\xE5 och hj\xE4lpa varandra.\r\n"
