@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class GameOverPanel : MonoBehaviour {
 
 	public Text winnerText;
-	public Text scoreText;
+	public Text player1ScoreText;
+	public Text player2ScoreText;
+	public Text player1,player2;
 
 	void Start () {
 		gameObject.SetActive (false);
@@ -23,6 +25,9 @@ public class GameOverPanel : MonoBehaviour {
 			winnerText.text = "Oavgjort!";
 			winnerText.color = Color.white;
 		}
-		scoreText.text = "Spelare 1: " + player1Score + " poäng\nSpelare 2: " + player2Score + " poäng";
+		player1ScoreText.text = player1Score + " poäng";
+		player1.color = GameManager.instance.colorPlayer1;
+		player2ScoreText.text = player2Score + " poäng";
+		player2.color = GameManager.instance.colorPlayer2;
 	}
 }

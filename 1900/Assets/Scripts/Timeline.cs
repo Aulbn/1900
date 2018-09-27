@@ -92,9 +92,9 @@ public class Timeline : MonoBehaviour {
 		for (int i = 0; i < timelineCards.Length; i++) {
 			Vector2 tcPos = timelineCards [i].transform.position;
 			if (Input.mousePosition.x < tcPos.x) {
-				if (historyEvent.year < timelineCards [i].GetEvent().year) {
+				if (historyEvent.year <= timelineCards [i].GetEvent().year) {
 					if (i > 0) {
-						if (historyEvent.year > timelineCards [i - 1].GetEvent().year) {
+						if (historyEvent.year >= timelineCards [i - 1].GetEvent().year) {
 							return i;
 						}
 					} else

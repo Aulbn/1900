@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
 		currentPlayerText.text = "Spelare " + currentPlayer + ":s tur!";
 
 		if (score > 0 && pool.GetComponentsInChildren <EventCard> ().Length == 0) {
-			print ("Game Over!");
+//			print ("Game Over!");
 			gameOverPanel.SetWinner (player1Score, player2Score);
 			gameOverPanel.gameObject.SetActive (true);
 		}
