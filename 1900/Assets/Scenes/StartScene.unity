@@ -1776,7 +1776,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Spela
 --- !u!222 &776560974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3457,9 +3457,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Exit
-
-'
+  m_Text: Avsluta
 --- !u!222 &1505430562
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4890,7 +4888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rules
+  m_Text: Tutorial
 --- !u!222 &1962126513
 CanvasRenderer:
   m_ObjectHideFlags: 0
