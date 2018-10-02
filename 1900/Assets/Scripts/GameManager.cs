@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
 
 	private int player1Score, player2Score = 0;
 	private int currentPlayer;
+	public List<string>[] failedStrings = new List<string>[] {new List<string>(), new List<string>()};
 
 	public bool holdingCard = false;
 
@@ -107,6 +108,16 @@ public class GameManager : MonoBehaviour {
 			correctWrongText.text = "Fel!";
 			correctWrongText.color = colorred;
 			infoText.text = "";
+//			if (failedStrings.ContainsKey(currentPlayer)) {
+//				print ("finns inte");
+//				failedStrings.Add (currentPlayer, new List<string> ());
+//				print ("skapades");
+//			}	
+//			if (!failedStrings [currentPlayer].Contains (historyEvent.eventName))
+//				failedStrings [currentPlayer].Add (historyEvent.eventName);
+			if (!failedStrings[currentPlayer-1].Contains(historyEvent.eventName)){
+				failedStrings [currentPlayer - 1].Add (historyEvent.eventName);
+			}
 		}
 	}
 

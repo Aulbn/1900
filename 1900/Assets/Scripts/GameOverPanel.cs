@@ -9,6 +9,7 @@ public class GameOverPanel : MonoBehaviour {
 	public Text player1ScoreText;
 	public Text player2ScoreText;
 	public Text player1,player2;
+	public Text p1WorkOn, p2WorkOn;
 
 	void Start () {
 		gameObject.SetActive (false);
@@ -29,5 +30,18 @@ public class GameOverPanel : MonoBehaviour {
 		player1.color = GameManager.instance.colorPlayer1;
 		player2ScoreText.text = player2Score + " poäng";
 		player2.color = GameManager.instance.colorPlayer2;
+
+		for (int i = 0; i < 2; i++){
+			string workOnText = "Träna på:";
+			print (GameManager.instance.failedStrings [i].Count);
+			for (int j = 0; j < (GameManager.instance.failedStrings [i].Count > 3 ? 3 : GameManager.instance.failedStrings [i].Count); j++) {
+				workOnText += "\n" + GameManager.instance.failedStrings [i] [j] + ",";
+			}
+			if (i == 1) {
+				p1WorkOn.text = workOnText;
+			} else {
+				p2WorkOn.text = workOnText;
+			}
+		}
 	}
 }
